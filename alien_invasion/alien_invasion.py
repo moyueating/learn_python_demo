@@ -5,7 +5,7 @@ from ship import Ship
 import game_functions as gf
 
 def run_game():
-    # 初始化游戏并创建一个屏幕对象
+# 初始化游戏并创建一个屏幕对象
     pygame.init()
     all_settings = Settings()
     screen = pygame.display.set_mode((all_settings.screen_width, all_settings.screen_height))
