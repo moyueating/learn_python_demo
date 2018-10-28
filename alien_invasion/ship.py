@@ -20,9 +20,10 @@ class Ship(object):
 		self.rect.bottom = self.screen_rect.bottom
 
 	def update(self):
-		if self.moving_right:
+		# 控制飞船移动以及边界控制
+		if self.moving_right and self.rect.right < self.screen_rect.right:
 			self.center += self.settings.ship_speed_factor
-		if self.moving_left:
+		if self.moving_left and self.rect.left > 0:
 			self.center -= self.settings.ship_speed_factor
 
 		# 根据self.center更新rect对象
