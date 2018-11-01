@@ -19,6 +19,9 @@ class Ship(object):
 		self.rect.centerx = self.screen_rect.centerx
 		self.rect.bottom = self.screen_rect.bottom
 
+	def center_ship(self):
+		self.center = float(self.screen_rect.centerx)
+
 	def update(self):
 		# 控制飞船移动以及边界控制
 		if self.moving_right and self.rect.right < self.screen_rect.right:
