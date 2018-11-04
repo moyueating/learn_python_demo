@@ -1,4 +1,5 @@
 import sys
+import json
 import pygame
 from time import sleep
 from bullet import Bullet
@@ -40,6 +41,7 @@ def check_play_button(settings, screen, status, sb, play_button, ship, aliens, b
 		pygame.mouse.set_visible(False)
 		status.reset_status()
 		sb.prep_life()
+		sb.prep_score()
 		status.game_active = True
 		aliens.empty()
 		bullets.empty()
@@ -155,6 +157,10 @@ def update_aliens(settings, status, sb, play_button, screen, ship, aliens, bulle
 	# 检查外星人是否达到屏幕底部
 	check_alien_bottom(settings, status, sb, play_button, screen, ship, aliens, bullets)
 
+def save_high_score(settings, status):
+	with open(settings.high_score_file, 'w') as file:
+		json.dump(status.high_score, file)
+
 def ship_hit(settings, status, sb, play_button, screen, ship, aliens, bullets):
 	# 飞船生命减一
 	status.ships_left -= 1
@@ -171,3 +177,4 @@ def ship_hit(settings, status, sb, play_button, screen, ship, aliens, bullets):
 	else:
 		status.game_active = False
 		pygame.mouse.set_visible(True)
+		save_high_score(settings, status)
