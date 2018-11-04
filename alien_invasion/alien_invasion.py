@@ -5,6 +5,7 @@ from button import Button
 from game_status import GameStatus
 from scoreboard import ScoreBoard
 from ship import Ship
+from sound import Sound
 import game_functions as gf
 
 def run_game():
@@ -18,6 +19,7 @@ def run_game():
 	# 创建一个用于存储游戏统计信息的实例
 	status = GameStatus(all_settings)
 	sb = ScoreBoard(all_settings, screen, status)
+	sound = Sound(all_settings)
 
 	# 创建一艘飞船
 	ship = Ship(all_settings,screen)

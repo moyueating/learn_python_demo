@@ -12,11 +12,13 @@ class Settings():
 		self.bullet_color = (60, 60, 60)
 		self.bullet_allowed = 10
 		# 外星人设置
-		self.fleet_drop_speed = 160
+		self.fleet_drop_speed = 10
 		self.speedup_scale = 1.1
 		self.score_scale = 1.5
-
+		# 历史最高分
 		self.high_score_file = "high_score.json"
+		# 背景音乐
+		self.bg_music = 'bg.mp3'
 		self.initialize_dynamic_settings()
 
 	def initialize_dynamic_settings(self):
