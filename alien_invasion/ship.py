@@ -1,8 +1,10 @@
 import pygame
+from pygame.sprite import Sprite
 
-class Ship(object):
+class Ship(Sprite):
 	"""一个存储游戏《外星人入侵》 的所有设置的类"""
 	def __init__(self, settings,screen):
+		super().__init__()
 		self.screen = screen
 		self.settings = settings
 		# 加载飞船图像并获取起外接矩形
